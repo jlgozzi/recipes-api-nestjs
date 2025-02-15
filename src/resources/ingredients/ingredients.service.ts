@@ -15,8 +15,8 @@ export class IngredientsService {
     return this.ingredientsRepository.save(createIngredientDto);
   }
 
-  findAll() {
-    return `This action returns all ingredients`;
+  async findAll(userId: string) {
+    return this.ingredientsRepository.find({ where: { userId: userId } });
   }
 
   findOne(id: number) {

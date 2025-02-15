@@ -54,8 +54,8 @@ export class RecipesService {
     }
   }
 
-  async findAll() {
-    return this.recipesRepository.find();
+  async findAll(userId: string) {
+    return this.recipesRepository.find({ where: { userId: userId } });
   }
 
   findOne(id: number) {
