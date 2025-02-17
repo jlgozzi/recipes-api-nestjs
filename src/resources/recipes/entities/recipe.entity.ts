@@ -41,6 +41,9 @@ export class Recipe {
   @Column()
   userId: string;
 
+  @Column({ default: false })
+  isFavorite: boolean;
+
   @ManyToOne(() => User, (user) => user.recipes, { onDelete: 'CASCADE' })
   user: User;
 
